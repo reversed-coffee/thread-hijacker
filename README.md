@@ -1,7 +1,7 @@
 # Thread-Hijacker
 A proof-of-concept C# project that can inject a DLL into a process by hijacking its main thread. The point of this project is to demonstrate how a DLL can be injected into a process without creating any new threads. I created this while studying the internals of Windows, and it was a fun project to work on. I hope you find it useful.
 
-This project was created for educational purposes only.
+This project is completely PnP (plug n' play) — you should just be able to copy the source files to your .NET project and include the namespace to use it. This project was created for educational purposes only.
 
 ## Summary
 The program will first attempt to find the target process by name. If the process is found, the program will then attempt to find the target's main thread. If the main thread is found, the program will then attempt to inject the DLL into the target process by hijacking the main thread of the process.
