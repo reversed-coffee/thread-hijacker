@@ -17,7 +17,7 @@ The program essentially follows this process to hijack the main thread of the ta
     pushad                ; save registers to stack
     push offset dllPath   ; push path pointer to stack
     call LoadLibraryA     ; load the module
-    mov [result], eax       ; copy contents of eax to result
+    mov [result], eax     ; copy contents of eax to result
     popad                 ; pop registers back to original state
     jmp back              ; jump back to what thread was executing
     ```
