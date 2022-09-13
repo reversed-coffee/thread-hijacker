@@ -13,7 +13,7 @@ The program essentially follows this process to hijack the main thread of the ta
 - Allocate memory for the DLL path and write the DLL path to the allocated memory.
 - Allocate memory for the return value of `LoadLibraryA`.
 - Allocate memory for a code cave and write the code cave to the allocated memory. The code cave will call `LoadLibraryA` with the DLL path as the argument. Once `LoadLibraryA` is called, it will copy the contents of `eax` (the return argument of `LoadLibraryA`) to the allocated return memory. After that's done, it will then jump back to `eip` in the saved context. The mnemonics for the code cave is as follows:
-    ```x86asm
+    ```nasm
     pushad                ; save registers to stack
     push offset dllPath   ; push path pointer to stack
     call LoadLibraryA     ; load the module
